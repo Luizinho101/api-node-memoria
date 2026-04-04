@@ -1,0 +1,23 @@
+{
+  "name": "api-node-memoria",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para consolidar conceitos de Arquitetura em Camadas (Routes, Controllers, Services) e manipulação de dados em memória antes da implementação de persistência com SQL/NoSQL.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luizinho101/api-node-memoria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luizinho101/api-node-memoria/issues"
+  },
+  "homepage": "https://github.com/Luizinho101/api-node-memoria#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
