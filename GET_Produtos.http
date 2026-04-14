@@ -1,0 +1,17 @@
+GET http://localhost:8080/produtos
+
+
+
+
+###
+
+// Get por ID
+
+GET http://localhost:8080/produtos/1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/produtos/3
+Content-Type: application/json
+

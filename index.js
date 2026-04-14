@@ -2,20 +2,25 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
-let usuarios = {};
+let produtos = {};
 let id = 1;
 
-app.get('/usuarios', (req, res) => {
-    res.json({msg: Object.values(usuarios)})
+app.get('/produtos', (req, res) => {
+    res.json({msg: Object.values(produtos)})
 })
 
-app.post('/usuarios', (req, res) => {
-    const usuario = req.body
-    const idUsuario = id;
-    usuario.id = idUsuario;
-    usuarios[idUsuario] = usuario;
+app.get('/produtos/:id', (req, res) => {
+    res.json({msg: produtos[req.params.id]})
+})
+
+
+app.post('/produtos', (req, res) => {
+    const produto = req.body
+    const idProduto = id;
+    produto.id = idProduto;
+    produtos[idProduto] = produto;
     id += 1;
-    res.json({msg: "Usuarios adicionado com sucesso!"})
+    res.json({msg: "Produto adicionado com sucesso!"})
 })
 
 app.listen(8080, () => {
