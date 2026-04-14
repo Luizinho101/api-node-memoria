@@ -1,0 +1,82 @@
+
+
+//  Produto 1
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+  "nome": "Teclado Mecânico",
+  "descricao": "Switch Blue, RGB, ABNT2",
+  "preco": 189.90
+}
+
+// Produto 2
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Monitor 24 Pol",
+    "descricao": "Full HD, 144Hz, Painel IPS, 1ms",
+    "preco": 899.00
+}
+
+
+// Produto 3
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Headset Gamer",
+    "descricao": "Som Surround 7.1, Microfone com cancelamento de ruído",
+    "preco": 245.50
+}
+
+
+// Produto 4
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+
+{
+    "nome": "Cadeira Office",
+    "descricao": "Ergonômica, Reclinável, Base em aço",
+    "preco": 670.00
+}
+
+
+// Produto 5
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Webcam 1080p",
+    "descricao": "Foco automático, Microfone estéreo embutido",
+    "preco": 159.90
+}
+
+
+// Produto 6
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Mousepad Speed",
+    "descricao": "Tamanho Extra Grande (900x400mm), Bordas costuradas",
+    "preco": 45.00
+}
