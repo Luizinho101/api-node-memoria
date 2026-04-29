@@ -1,0 +1,9 @@
+
+PUT  http://localhost:8080/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Teclado simples",
+  "descricao": "Switch Black, RGB, ABNT2",
+  "preco": 200
+}
