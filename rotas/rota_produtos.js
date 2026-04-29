@@ -45,5 +45,16 @@ router.put('/:id', validarProduto , (req, res) => {
     }
 });
 
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+
+    if (produtos[id]) {
+        delete produtos[id];
+        res.json({ msg: "Produto removido com sucesso!" });
+    } else {
+        res.status(404).json({ msg: "Produto não encontrado." });
+    }
+});
+
 
 module.exports = router
