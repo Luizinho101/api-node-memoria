@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router();
+const validarProduto = require('../middlewares/validar_produto');
 
 
 
@@ -15,7 +16,7 @@ router.get('/:id', (req, res) => {
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', validarProduto ,  (req, res) => {
     const produto = req.body
     const idProduto = id;
 
