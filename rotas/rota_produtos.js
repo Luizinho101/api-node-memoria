@@ -26,7 +26,7 @@ router.post('/', validarProduto ,  (req, res) => {
     res.json({Produto: "Produto adicionado com sucesso!"})
 })
 
-router.put('/:id', (req, res) => {
+router.put('/:id', validarProduto , (req, res) => {
     const id = Number(req.params.id); 
     const novoConteudo = req.body;
 
