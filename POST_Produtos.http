@@ -80,3 +80,17 @@ Content-Type: application/json
     "descricao": "Tamanho Extra Grande (900x400mm), Bordas costuradas",
     "preco": 45.00
 }
+
+
+
+// Produto com dados irregulares
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Mousepad Speed",
+    "descricao": "Tamanho Extra Grande (900x400mm), Bordas costuradas"
+}

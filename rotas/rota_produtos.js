@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router();
+const validarProduto = require('../middlewares/validar_produto');
 
 
 
@@ -15,7 +16,7 @@ router.get('/:id', (req, res) => {
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', validarProduto ,  (req, res) => {
     const produto = req.body
     const idProduto = id;
 
@@ -24,6 +25,25 @@ router.post('/', (req, res) => {
     id += 1;
     res.json({Produto: "Produto adicionado com sucesso!"})
 })
+
+router.put('/:id', validarProduto , (req, res) => {
+    const id = Number(req.params.id); 
+    const novoConteudo = req.body;
+
+    if (produtos[id]) {
+     
+        produtos[id] = novoConteudo
+        
+        res.status(200).json({ 
+            msg: "Produto atualizado com sucesso", 
+            dados: produtos[id] 
+        });
+    } else {
+        res.status(404).json({ 
+            msg: `Erro: Produto com ID ${id} não encontrado.` 
+        });
+    }
+});
 
 
 module.exports = router
