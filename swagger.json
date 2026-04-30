@@ -1,0 +1,103 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Produtos",
+    "description": "Gerenciamento de produtos em memória com validação AJV",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor Local"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Produto": {
+        "type": "object",
+        "properties": {
+          "nome": { 
+            "type": "string", 
+            "minLength": 3,
+            "description": "Nome do produto (mínimo 3 caracteres)" 
+          },
+          "descricao": { 
+            "type": "string",
+            "description": "Descrição detalhada do produto"
+          },
+          "preco": { 
+            "type": "number", 
+            "minimum": 0,
+            "description": "Preço unitário (não pode ser negativo)"
+          }
+        },
+        "required": ["nome", "preco"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+    "/produtos": {
+      "get": {
+        "summary": "Lista todos os produtos",
+        "responses": {
+          "200": { "description": "Lista de produtos retornada com sucesso" }
+        }
+      },
+      "post": {
+        "summary": "Cria um novo produto",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Produto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Produto adicionado com sucesso!" }
+        }
+      }
+    },
+    "/produtos/{id}": {
+      "put": {
+        "summary": "Atualiza um produto existente",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Produto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Produto atualizado com sucesso" },
+          "404": { "description": "Produto não encontrado" }
+        }
+      },
+      "delete": {
+        "summary": "Remove um produto pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Produto removido com sucesso!" },
+          "404": { "description": "Produto não encontrado" }
+        }
+      }
+    }
+  }
+}
